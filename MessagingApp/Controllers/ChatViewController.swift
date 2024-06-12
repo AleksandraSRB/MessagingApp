@@ -11,9 +11,8 @@ import Firebase
 class ChatViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var messageTextfield: UITextField!
     @IBOutlet weak var textFieldView: UIView!
-    
+    @IBOutlet weak var messageTextfield: UITextView!
     
     let db = Firestore.firestore()
     
@@ -46,6 +45,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.tintColor = UIColor(named: K.BrandColor.brandLightPurple)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOutPressed))
         navigationController?.navigationBar.barTintColor = .brandPurple
+        messageTextfield.layer.cornerRadius = 10
     }
  
     

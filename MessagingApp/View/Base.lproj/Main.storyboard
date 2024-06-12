@@ -296,15 +296,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6p-TV-6NU" userLabel="TextFieldView">
                                 <rect key="frame" x="0.0" y="709" width="393" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wbl-jg-AaB" userLabel="MessageTextField">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oL6-WZ-6UK">
                                         <rect key="frame" x="20" y="20" width="293" height="40"/>
-                                        <color key="tintColor" name="BrandLightPurple"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="z2d-Eb-DAb"/>
+                                            <constraint firstAttribute="height" constant="40" id="FFR-U9-eYK"/>
                                         </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW7-m6-tTD">
                                         <rect key="frame" x="333" y="20" width="40" height="40"/>
                                         <constraints>
@@ -323,11 +324,12 @@
                                 <color key="backgroundColor" name="BrandPurple"/>
                                 <color key="tintColor" name="BrandPurple"/>
                                 <constraints>
+                                    <constraint firstItem="hW7-m6-tTD" firstAttribute="leading" secondItem="oL6-WZ-6UK" secondAttribute="trailing" constant="20" id="8Tj-f9-56z"/>
                                     <constraint firstItem="hW7-m6-tTD" firstAttribute="top" secondItem="z6p-TV-6NU" secondAttribute="top" constant="20" id="MDT-za-5Fk"/>
                                     <constraint firstAttribute="height" constant="60" id="MsB-CX-hla"/>
-                                    <constraint firstItem="wbl-jg-AaB" firstAttribute="leading" secondItem="z6p-TV-6NU" secondAttribute="leading" constant="20" id="OT4-1D-wVN"/>
-                                    <constraint firstItem="wbl-jg-AaB" firstAttribute="top" secondItem="z6p-TV-6NU" secondAttribute="top" constant="20" id="Sgw-gP-PzP"/>
-                                    <constraint firstItem="hW7-m6-tTD" firstAttribute="leading" secondItem="wbl-jg-AaB" secondAttribute="trailing" constant="20" id="Yh5-Qz-d5d"/>
+                                    <constraint firstItem="oL6-WZ-6UK" firstAttribute="top" secondItem="z6p-TV-6NU" secondAttribute="top" constant="20" id="SeY-if-1nX"/>
+                                    <constraint firstAttribute="bottom" secondItem="oL6-WZ-6UK" secondAttribute="bottom" id="lnU-en-Pbc"/>
+                                    <constraint firstItem="oL6-WZ-6UK" firstAttribute="leading" secondItem="z6p-TV-6NU" secondAttribute="leading" constant="20" id="uHJ-66-GRW"/>
                                     <constraint firstItem="hW7-m6-tTD" firstAttribute="trailing" secondItem="z6p-TV-6NU" secondAttribute="trailing" constant="-20" id="x3L-wp-oJE"/>
                                 </constraints>
                             </view>
@@ -337,9 +339,9 @@
                         <color key="tintColor" name="BrandPurple"/>
                         <constraints>
                             <constraint firstItem="z6p-TV-6NU" firstAttribute="top" secondItem="y7M-Ve-BZy" secondAttribute="bottom" id="2xN-Vg-jRx"/>
-                            <constraint firstItem="z6p-TV-6NU" firstAttribute="trailing" secondItem="foX-ar-hGF" secondAttribute="trailing" id="3jM-iz-mqU"/>
                             <constraint firstItem="y7M-Ve-BZy" firstAttribute="trailing" secondItem="foX-ar-hGF" secondAttribute="trailing" id="3wg-J1-Ejm"/>
                             <constraint firstItem="y7M-Ve-BZy" firstAttribute="leading" secondItem="foX-ar-hGF" secondAttribute="leading" id="Fy8-E3-dT6"/>
+                            <constraint firstItem="z6p-TV-6NU" firstAttribute="trailing" secondItem="y7M-Ve-BZy" secondAttribute="trailing" id="Uy3-Nn-gQZ"/>
                             <constraint firstItem="y7M-Ve-BZy" firstAttribute="top" secondItem="foX-ar-hGF" secondAttribute="top" constant="20" id="Vw0-ya-MKx"/>
                             <constraint firstItem="y7M-Ve-BZy" firstAttribute="bottom" secondItem="z6p-TV-6NU" secondAttribute="top" id="WEI-8o-N1M"/>
                             <constraint firstItem="foX-ar-hGF" firstAttribute="bottom" secondItem="z6p-TV-6NU" secondAttribute="bottom" id="azw-Tf-Xeb"/>
@@ -349,7 +351,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="messageTextfield" destination="wbl-jg-AaB" id="3pt-1K-Qzz"/>
+                        <outlet property="messageTextfield" destination="oL6-WZ-6UK" id="cTJ-aC-a6D"/>
                         <outlet property="tableView" destination="y7M-Ve-BZy" id="ezl-hF-LVH"/>
                         <outlet property="textFieldView" destination="z6p-TV-6NU" id="zKq-oI-5dU"/>
                         <outlet property="view" destination="I89-ir-ucY" id="jas-Lh-7bz"/>
@@ -392,6 +394,9 @@
         <namedColor name="BrandPurple">
             <color red="0.44100001454353333" green="0.18600000441074371" blue="0.43299999833106995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
